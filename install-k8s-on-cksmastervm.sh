@@ -1,5 +1,6 @@
 #!/bin/bash
 # Source: http://kubernetes.io/docs/getting-started-guides/kubeadm/
+# INSTALL cks-master https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_master.sh
 
 ### install k8s and docker
 apt-get remove -y docker.io kubelet kubeadm kubectl kubernetes-cni
