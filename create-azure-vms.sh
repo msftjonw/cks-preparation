@@ -1,3 +1,4 @@
+#!/bin/bash
 #Create resource group
 az group create --name RG-CKS --location westus2
 
@@ -54,9 +55,6 @@ az vm create \
     --admin-username azureuser \
     --ssh-key-values "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc3abkg72tuqhIG+1Dxj7ASX3rvIu6cT/Fh7i2m4dqiDaAj7QP7F8NjhTzpAPOPUM2TeD0UK+8k8W6R8xi2djCIUTXWg/hxuZVKYE2Im/z3G8zauc4R2RtCH6MJIZ15CfL88fqjaRSViaRDh+BKyVH6iARASrWTat80+hj4Tcc1dlBJ30C4gfD7Ol5iP6/FvFLiCSxb1SlGSYTO+Ps+YAuJNqmjZPk/+pKkZ+FXqjmula7LVLgcsPB1l2PPdxC+9pwV1JsDCLSBZICrxZEil7cEBZ43L9w0Yi+OcCaNOtHIqRQnEtaWsykZaGPutHGs854KRaTQLuNOEwh5ok4bCTv pejastojakovic@JONWSL3"
 
-#SSH into VM
-ssh azureuser@cks-master.westus2.cloudapp.azure.com
-
 ##===##
 
 ##Create CKS-Worker
@@ -84,6 +82,3 @@ az vm create \
     --image UbuntuLTS \
     --admin-username azureuser \
     --ssh-key-values "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc3abkg72tuqhIG+1Dxj7ASX3rvIu6cT/Fh7i2m4dqiDaAj7QP7F8NjhTzpAPOPUM2TeD0UK+8k8W6R8xi2djCIUTXWg/hxuZVKYE2Im/z3G8zauc4R2RtCH6MJIZ15CfL88fqjaRSViaRDh+BKyVH6iARASrWTat80+hj4Tcc1dlBJ30C4gfD7Ol5iP6/FvFLiCSxb1SlGSYTO+Ps+YAuJNqmjZPk/+pKkZ+FXqjmula7LVLgcsPB1l2PPdxC+9pwV1JsDCLSBZICrxZEil7cEBZ43L9w0Yi+OcCaNOtHIqRQnEtaWsykZaGPutHGs854KRaTQLuNOEwh5ok4bCTv pejastojakovic@JONWSL3"
-
-#SSH into VM
-ssh azureuser@cks-worker.westus2.cloudapp.azure.com
