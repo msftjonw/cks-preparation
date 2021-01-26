@@ -1,18 +1,15 @@
 #reset with kubeadm
+sudo su
 kubeadm reset -f
 
 #remove kubeconfig
 #switch to the normal user
-rm -rf ~/.kube
+rm -rf /home/jonw/.kube
+find /home/jonw -type f -name "*.yaml" -delete
+find /home/jonw -type f \! -name "*.yaml" -delete
 
 #reset iptables
 iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
-
-#delete all files created in certain directory with something.yaml
-find /home/jonw -type f -name "*.yaml" -delete
-
-#delete all files created in certain directory not with something.yaml
-find /home/jonw -type f \! -name "*.yaml" -delete
 
 #initiate a new kubeadm K8s cluster
 kubeadm init
