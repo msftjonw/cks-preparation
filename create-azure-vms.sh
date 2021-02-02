@@ -34,9 +34,9 @@ az network nsg rule create \
     --destination-port-range 22 \
     --access allow
     
-az network nsg rule create 
-    -g RG-CKS \
-    --nsg-name NSG-CKS
+az network nsg rule create \
+    --resource-group RG-CKS \
+    --nsg-name NSG-CKS \
     --name K8sServicePorts \
     --priority 2000 \
     --protocol tcp \
@@ -62,8 +62,8 @@ az vm create \
     --nics NIC-CKS-Master \
     --image UbuntuLTS \
     --admin-username azureuser \
-    --ssh-key-values "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc3abkg72tuqhIG+1Dxj7ASX3rvIu6cT/Fh7i2m4dqiDaAj7QP7F8NjhTzpAPOPUM2TeD0UK+8k8W6R8xi2djCIUTXWg/hxuZVKYE2Im/z3G8zauc4R2RtCH6MJIZ15CfL88fqjaRSViaRDh+BKyVH6iARASrWTat80+hj4Tcc1dlBJ30C4gfD7Ol5iP6/FvFLiCSxb1SlGSYTO+Ps+YAuJNqmjZPk/+pKkZ+FXqjmula7LVLgcsPB1l2PPdxC+9pwV1JsDCLSBZICrxZEil7cEBZ43L9w0Yi+OcCaNOtHIqRQnEtaWsykZaGPutHGs854KRaTQLuNOEwh5ok4bCTv pejastojakovic@JONWSL3"
-
+    --admin-password zaq1@WSXcde3
+    
 ##===##
 
 ##Create CKS-Worker
@@ -90,4 +90,4 @@ az vm create \
     --nics NIC-CKS-Worker\
     --image UbuntuLTS \
     --admin-username azureuser \
-    --ssh-key-values "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc3abkg72tuqhIG+1Dxj7ASX3rvIu6cT/Fh7i2m4dqiDaAj7QP7F8NjhTzpAPOPUM2TeD0UK+8k8W6R8xi2djCIUTXWg/hxuZVKYE2Im/z3G8zauc4R2RtCH6MJIZ15CfL88fqjaRSViaRDh+BKyVH6iARASrWTat80+hj4Tcc1dlBJ30C4gfD7Ol5iP6/FvFLiCSxb1SlGSYTO+Ps+YAuJNqmjZPk/+pKkZ+FXqjmula7LVLgcsPB1l2PPdxC+9pwV1JsDCLSBZICrxZEil7cEBZ43L9w0Yi+OcCaNOtHIqRQnEtaWsykZaGPutHGs854KRaTQLuNOEwh5ok4bCTv pejastojakovic@JONWSL3"
+    --admin-password zaq1@WSXcde3
