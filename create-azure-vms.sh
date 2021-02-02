@@ -33,6 +33,15 @@ az network nsg rule create \
     --priority 1000 \
     --destination-port-range 22 \
     --access allow
+    
+az network nsg rule create 
+    -g RG-CKS \
+    --nsg-name NSG-CKS
+    --name K8sServicePorts \
+    --priority 2000 \
+    --protocol tcp \
+    --destination-port-ranges 30000-40000 \
+    --access allow
 
 #Associate NSG to subnet
 az network vnet subnet update -g RG-CKS -n Subnet-CKS --vnet-name VNet-CKS --network-security-group NSG-CKS
