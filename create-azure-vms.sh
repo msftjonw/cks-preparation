@@ -63,7 +63,13 @@ az vm create \
     --image UbuntuLTS \
     --admin-username azureuser \
     --admin-password zaq1@WSXcde3
-    
+
+#Create auto shutdown schedule for vm
+az vm auto-shutdown \
+    -g RG-CKS \
+    -n CKS-Master \
+    --time 1800
+
 ##===##
 
 ##Create CKS-Worker
