@@ -11,6 +11,11 @@ find /home/jonw -type f \! -name "*.yaml" -delete
 #reset iptables
 iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
 
+#install specific version of kubelet, kubeadm, kubectl and kubernetes-cni
+KUBE_VERSION=1.19.3
+apt-get update
+apt-get install -y docker.io kubelet=${KUBE_VERSION}-00 kubeadm=${KUBE_VERSION}-00 kubectl=${KUBE_VERSION}-00 kubernetes-cni=0.8.7-00
+
 #initiate a new kubeadm K8s cluster
 kubeadm init
 
