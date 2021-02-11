@@ -5,6 +5,7 @@ kubeadm reset -f
 #remove kubeconfig
 #switch to the normal user
 rm -rf /home/jonw/.kube
+rm -rf /etc/kubernetes
 find /home/jonw -type f -name "*.yaml" -delete
 find /home/jonw -type f \! -name "*.yaml" -delete
 
