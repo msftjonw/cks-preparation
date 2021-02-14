@@ -12,6 +12,10 @@ find /home/jonw -type f \! -name "*.yaml" -delete
 #reset iptables
 iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
 
+#uninstall kubelet, kubeadmm kubectl and kubernetes-cni
+apt-get remove -y docker.io kubelet kubeadm kubectl kubernetes-cni
+apt-get autoremove -y
+
 #install specific version of kubelet, kubeadm, kubectl and kubernetes-cni
 KUBE_VERSION=1.19.3
 apt-get update
